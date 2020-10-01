@@ -14,30 +14,31 @@ struct ContentView: View {
 
     @EnvironmentObject private var synthesizer: SpeechSynthesizer
 
-    @State private var messages: [String] = []
+    @State private var messages: [Message] = []
 
     var body: some View {
         NavigationView {
             DialogueView(messages: messages)
                 .navigationBarTitle("Dialogue", displayMode: .inline)
-        }.onReceive(dispatcher.message, perform: display(message:))
-            .onReceive(dispatcher.message.delay(for: 1, scheduler: RunLoop.main), perform: speak(message:))
-            .onReceive(synthesizer.didFinish, perform: proceed)
-            .onAppear(perform: dispatcher.connect)
+        }
+        .onReceive(dispatcher.message, perform: display(message:))
+        .onReceive(dispatcher.message.delay(for: 1, scheduler: RunLoop.main), perform: speak(message:))
+        .onReceive(synthesizer.didFinish, perform: proceed)
+        .onAppear(perform: dispatcher.connect)
     }
     
 }
 
 extension ContentView {
 
-    private func display(message: String) {
+    private func display(message: Message) {
         withAnimation {
             messages.insert(message, at: 0)
         }
     }
 
-    private func speak(message: String) {
-        synthesizer.speak(message)
+    private func speak(message: Message) {
+        synthesizer.speak(message.line)
     }
 
     private func proceed(_ utterance: Any) {

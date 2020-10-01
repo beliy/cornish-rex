@@ -8,34 +8,49 @@
 
 import SwiftUI
 
+private extension AnyTransition {
+
+    static let custom = AnyTransition.offset(x: 0, y: -300).combined(with: .opacity)
+
+}
+
 struct DialogueView: View {
 
-    public let messages: [String]
+    public let messages: [Message]
 
     var body: some View {
-        ScrollView {
-            VStack(alignment: .leading, spacing: 30) {
-                ForEach(messages, id: \.self) { message in
-                    Group {
-                        MessageView(text: message)
-                    }
-                }.scaleEffect(x: 1, y: -1, anchor: .center)
+        VStack(spacing: 1) {
+            Divider()
+                .hidden()
 
-                Divider()
-                    .hidden()
-            }.padding(.horizontal)
-                .padding(.vertical, 30)
+            ScrollView {
+                VStack(alignment: .leading, spacing: 30) {
+                    ForEach(messages) { message in
+                        Group {
+                            if message == self.messages.last {
+                                MessageView(text: message.line)
+                            } else {
+                                MessageView(text: message.line)
+                                    .transition(.custom)
+                            }
+                        }
+                    }.scaleEffect(x: 1, y: -1, anchor: .center)
+
+                    Divider()
+                        .hidden()
+                }.padding(.horizontal)
+                    .padding(.top, 40)
+            }.scaleEffect(x: 1, y: -1)
         }.background(
-                Color.viewBackground
-                    .edgesIgnoringSafeArea(.all)
-            )
-            .scaleEffect(x: 1, y: -1)
+            Color.viewBackground
+                .edgesIgnoringSafeArea(.all)
+        )
     }
 
 }
 
 struct DialogueView_Previews: PreviewProvider {
     static var previews: some View {
-        DialogueView(messages: .quotes)
+        DialogueView(messages: .messages)
     }
 }

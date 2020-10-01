@@ -18,6 +18,10 @@
 		2813488D252515E100178668 /* MessagesDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2813488C252515E100178668 /* MessagesDispatcher.swift */; };
 		2813488F25251B0200178668 /* SpeechSynthesizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2813488E25251B0200178668 /* SpeechSynthesizer.swift */; };
 		281348912525207700178668 /* DialogueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281348902525207700178668 /* DialogueView.swift */; };
+		28BBED0D2525EE42009CC902 /* Mockable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BBED0C2525EE42009CC902 /* Mockable.swift */; };
+		28BBED102525EE66009CC902 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BBED0F2525EE66009CC902 /* Message.swift */; };
+		28BBED122525EF31009CC902 /* messages.json in Resources */ = {isa = PBXBuildFile; fileRef = 28BBED112525EF31009CC902 /* messages.json */; };
+		28BBED142526043F009CC902 /* MessageBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BBED132526043F009CC902 /* MessageBackgroundView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +38,10 @@
 		2813488C252515E100178668 /* MessagesDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesDispatcher.swift; sourceTree = "<group>"; };
 		2813488E25251B0200178668 /* SpeechSynthesizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechSynthesizer.swift; sourceTree = "<group>"; };
 		281348902525207700178668 /* DialogueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogueView.swift; sourceTree = "<group>"; };
+		28BBED0C2525EE42009CC902 /* Mockable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mockable.swift; sourceTree = "<group>"; };
+		28BBED0F2525EE66009CC902 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		28BBED112525EF31009CC902 /* messages.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = messages.json; sourceTree = "<group>"; };
+		28BBED132526043F009CC902 /* MessageBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBackgroundView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				2813488B252515C500178668 /* Library */,
+				28BBED0E2525EE5A009CC902 /* Models */,
 				2813487825250AA100178668 /* Preview Content */,
 				2813488425250AC700178668 /* Storyboards */,
 				2813488525250AD800178668 /* View */,
@@ -107,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				281348902525207700178668 /* DialogueView.swift */,
+				28BBED132526043F009CC902 /* MessageBackgroundView.swift */,
 				2813488725250CBE00178668 /* MessageView.swift */,
 			);
 			path = Components;
@@ -118,8 +128,18 @@
 				2813488C252515E100178668 /* MessagesDispatcher.swift */,
 				2813488E25251B0200178668 /* SpeechSynthesizer.swift */,
 				2813488925250D9600178668 /* Color+Branding.swift */,
+				28BBED0C2525EE42009CC902 /* Mockable.swift */,
 			);
 			path = Library;
+			sourceTree = "<group>";
+		};
+		28BBED0E2525EE5A009CC902 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				28BBED0F2525EE66009CC902 /* Message.swift */,
+				28BBED112525EF31009CC902 /* messages.json */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,6 +201,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2813487D25250AA100178668 /* LaunchScreen.storyboard in Resources */,
+				28BBED122525EF31009CC902 /* messages.json in Resources */,
 				2813487A25250AA100178668 /* Preview Assets.xcassets in Resources */,
 				2813487725250AA100178668 /* Assets.xcassets in Resources */,
 			);
@@ -197,9 +218,12 @@
 				2813487125250AA000178668 /* AppDelegate.swift in Sources */,
 				281348912525207700178668 /* DialogueView.swift in Sources */,
 				2813487325250AA000178668 /* SceneDelegate.swift in Sources */,
+				28BBED142526043F009CC902 /* MessageBackgroundView.swift in Sources */,
 				2813487525250AA000178668 /* ContentView.swift in Sources */,
 				2813488D252515E100178668 /* MessagesDispatcher.swift in Sources */,
 				2813488F25251B0200178668 /* SpeechSynthesizer.swift in Sources */,
+				28BBED102525EE66009CC902 /* Message.swift in Sources */,
+				28BBED0D2525EE42009CC902 /* Mockable.swift in Sources */,
 				2813488A25250D9600178668 /* Color+Branding.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -19,10 +19,10 @@ struct MessageView: View {
             Text(text)
                 .font(.system(size: 17))
                 .fixedSize(horizontal: false, vertical: true)
-                .padding()
+                .padding(EdgeInsets(top: 10, leading: 21, bottom: 10, trailing: 10))
                 .background(
                     Color.messageBackground
-                        .cornerRadius(5)
+                        .clipShape(MessageBackgroundShape())
                         .shadow(color: Color.black.opacity(0.5), radius: 4, x: 1, y: 1)
                 )
 
